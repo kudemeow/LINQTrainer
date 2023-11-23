@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="LINQ.Views.ResultView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LINQ.Views"
+             DataContext="{DynamicResource ResultViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="498">
+    <Grid>
+        <DataGrid x:Name="ResultTable"
+                  Background="Transparent"
+                  Foreground="White"
+                  ItemsSource="{Binding TableSource}">
+        </DataGrid>
+    </Grid>
+</UserControl>

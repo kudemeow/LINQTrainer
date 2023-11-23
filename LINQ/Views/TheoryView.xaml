@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="LINQ.Views.TheoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:LINQ.Views"
+             xmlns:vm="clr-namespace:LINQ.ViewModels"
+             DataContext="{DynamicResource TheoryViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="498">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel VerticalAlignment="Center" Height="50" Grid.Row="0" Orientation="Horizontal">
+
+            <TextBlock
+                       Width="150"
+                       Text="Выберите тему:"
+                       Margin="160,6,10,0"
+                       Foreground="{StaticResource titleColor1}"
+                       FontSize="20"/>
+
+            <ComboBox x:Name="TopicSelect"
+                      Foreground="{StaticResource titleColor3}"
+                      FontSize="16"
+                      Margin="0,0,0,6"
+                      Height="30"
+                      Width="150"
+                      FontFamily="Montserrat"
+                      SelectedValue="{Binding SelectedTopic}"
+                      SelectionChanged="TopicSelect_SelectionChanged">
+                      <!--ItemsSource="{Binding Topics}"-->
+            </ComboBox>
+            
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Top" Height="250" Grid.Row="1">
+
+                <!--<Image x:Name="img"
+                       Source="{Binding PDF}"
+                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                       ScrollViewer.VerticalScrollBarVisibility="Visible"/>-->
+
+            <WebBrowser x:Name="PDF"
+                        Height="250"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible">
+            </WebBrowser>
+
+        </StackPanel>
+        
+    </Grid>
+    
+</UserControl>
